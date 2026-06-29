@@ -81,11 +81,12 @@ On first launch the app uses a small **built‑in starter dictionary** so it wor
 immediately. For the full 575k‑form dictionary, install the **data pack** (see
 below).
 
-### Option B — packaged app (no Python needed)
+### Option B — packaged app (no Python needed) ⭐ easiest
 
-A standalone build can be produced with `pyinstaller logos.spec` (the full
-dictionary is bundled into it). Prebuilt binaries will be attached to the
-[Releases page](../../releases) as they become available.
+Download **`LogosIDE-windows-x64.zip`** from the [Releases page](../../releases),
+unzip it anywhere, and run **`LogosIDE.exe`**. The full 575k‑form dictionary is
+bundled — nothing else to install. (You can also build it yourself with
+`pyinstaller logos.spec`.)
 
 ### The full dictionary data pack
 

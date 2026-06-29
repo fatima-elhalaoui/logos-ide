@@ -89,11 +89,13 @@ En el primer arranque la aplicación usa un **diccionario inicial integrado** y
 funciona de inmediato. Para el diccionario completo de 575 000 formas, instale el
 **paquete de datos** (más abajo).
 
-### Opción B — aplicación empaquetada (sin necesidad de Python)
+### Opción B — aplicación empaquetada (sin necesidad de Python) ⭐ la más fácil
 
-Puede generar un ejecutable independiente con `pyinstaller logos.spec` (el
-diccionario completo queda incluido). Se irán adjuntando binarios precompilados
-a la [página de versiones](../../releases) a medida que estén disponibles.
+Descargue **`LogosIDE-windows-x64.zip`** desde la
+[página de versiones](../../releases), descomprímalo donde quiera y ejecute
+**`LogosIDE.exe`**. El diccionario completo de 575 000 formas viene incluido: no
+hay que instalar nada más. (También puede generarlo usted con
+`pyinstaller logos.spec`.)
 
 ### El paquete de datos completo
 
