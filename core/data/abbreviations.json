@@ -1,0 +1,752 @@
+[
+ {
+  "abbr": "indecl.",
+  "en": "indeclinable",
+  "es": "indeclinable"
+ },
+ {
+  "abbr": "pl.",
+  "en": "plural",
+  "es": "plural"
+ },
+ {
+  "abbr": "sg.",
+  "en": "singular",
+  "es": "singular"
+ },
+ {
+  "abbr": "gen.",
+  "en": "genitive",
+  "es": "genitivo"
+ },
+ {
+  "abbr": "dat.",
+  "en": "dative",
+  "es": "dativo"
+ },
+ {
+  "abbr": "acc.",
+  "en": "accusative",
+  "es": "acusativo"
+ },
+ {
+  "abbr": "voc.",
+  "en": "vocative",
+  "es": "vocativo"
+ },
+ {
+  "abbr": "nom.",
+  "en": "nominative",
+  "es": "nominativo"
+ },
+ {
+  "abbr": "masc.",
+  "en": "masculine",
+  "es": "masculino"
+ },
+ {
+  "abbr": "fem.",
+  "en": "feminine",
+  "es": "femenino"
+ },
+ {
+  "abbr": "neut.",
+  "en": "neuter",
+  "es": "neutro"
+ },
+ {
+  "abbr": "aor.",
+  "en": "aorist",
+  "es": "aoristo"
+ },
+ {
+  "abbr": "impf.",
+  "en": "imperfect",
+  "es": "imperfecto"
+ },
+ {
+  "abbr": "fut.",
+  "en": "future",
+  "es": "futuro"
+ },
+ {
+  "abbr": "pf.",
+  "en": "perfect",
+  "es": "perfecto"
+ },
+ {
+  "abbr": "plpf.",
+  "en": "pluperfect",
+  "es": "pluscuamperfecto"
+ },
+ {
+  "abbr": "pres.",
+  "en": "present",
+  "es": "presente"
+ },
+ {
+  "abbr": "subj.",
+  "en": "subjunctive",
+  "es": "subjuntivo"
+ },
+ {
+  "abbr": "opt.",
+  "en": "optative",
+  "es": "optativo"
+ },
+ {
+  "abbr": "imper.",
+  "en": "imperative",
+  "es": "imperativo"
+ },
+ {
+  "abbr": "ind.",
+  "en": "indicative",
+  "es": "indicativo"
+ },
+ {
+  "abbr": "part.",
+  "en": "participle",
+  "es": "participio"
+ },
+ {
+  "abbr": "inf.",
+  "en": "infinitive",
+  "es": "infinitivo"
+ },
+ {
+  "abbr": "act.",
+  "en": "active",
+  "es": "activo"
+ },
+ {
+  "abbr": "med.",
+  "en": "middle",
+  "es": "medio"
+ },
+ {
+  "abbr": "pass.",
+  "en": "passive",
+  "es": "pasivo"
+ },
+ {
+  "abbr": "dep.",
+  "en": "deponent",
+  "es": "deponente"
+ },
+ {
+  "abbr": "contr.",
+  "en": "contracted",
+  "es": "contracto"
+ },
+ {
+  "abbr": "uncontr.",
+  "en": "uncontracted",
+  "es": "no contracto"
+ },
+ {
+  "abbr": "comp.",
+  "en": "comparative",
+  "es": "comparativo"
+ },
+ {
+  "abbr": "superl.",
+  "en": "superlative",
+  "es": "superlativo"
+ },
+ {
+  "abbr": "encl.",
+  "en": "enclitic",
+  "es": "enclítico"
+ },
+ {
+  "abbr": "Ep.",
+  "en": "Epic",
+  "es": "épico"
+ },
+ {
+  "abbr": "Ion.",
+  "en": "Ionic",
+  "es": "jónico"
+ },
+ {
+  "abbr": "Att.",
+  "en": "Attic",
+  "es": "ático"
+ },
+ {
+  "abbr": "Dor.",
+  "en": "Doric",
+  "es": "dórico"
+ },
+ {
+  "abbr": "Aeol.",
+  "en": "Aeolic",
+  "es": "eólico"
+ },
+ {
+  "abbr": "dial.",
+  "en": "dialect",
+  "es": "dialecto"
+ },
+ {
+  "abbr": "decl.",
+  "en": "declension",
+  "es": "declinación"
+ },
+ {
+  "abbr": "conj.",
+  "en": "conjugation",
+  "es": "conjugación"
+ },
+ {
+  "abbr": "q.v.",
+  "en": "which see",
+  "es": "véase"
+ },
+ {
+  "abbr": "cf.",
+  "en": "compare",
+  "es": "compárese"
+ },
+ {
+  "abbr": "sc.",
+  "en": "that is to say, namely",
+  "es": "es decir, a saber"
+ },
+ {
+  "abbr": "s.v.",
+  "en": "under the word",
+  "es": "bajo la palabra"
+ },
+ {
+  "abbr": "v.l.",
+  "en": "variant reading",
+  "es": "lectura variante"
+ },
+ {
+  "abbr": "f.l.",
+  "en": "false reading",
+  "es": "lectura falsa"
+ },
+ {
+  "abbr": "sqq.",
+  "en": "and the following ones",
+  "es": "y los siguientes"
+ },
+ {
+  "abbr": "ibid.",
+  "en": "in the same place",
+  "es": "en el mismo lugar"
+ },
+ {
+  "abbr": "op.cit.",
+  "en": "in the work cited",
+  "es": "en la obra citada"
+ },
+ {
+  "abbr": "et al.",
+  "en": "and others",
+  "es": "y otros"
+ },
+ {
+  "abbr": "i.e.",
+  "en": "that is",
+  "es": "es decir"
+ },
+ {
+  "abbr": "e.g.",
+  "en": "for example",
+  "es": "por ejemplo"
+ },
+ {
+  "abbr": "vid.",
+  "en": "see",
+  "es": "véase"
+ },
+ {
+  "abbr": "cod.",
+  "en": "manuscript",
+  "es": "manuscrito"
+ },
+ {
+  "abbr": "codd.",
+  "en": "manuscripts",
+  "es": "manuscritos"
+ },
+ {
+  "abbr": "om.",
+  "en": "omits, omitted",
+  "es": "omite, omitido"
+ },
+ {
+  "abbr": "add.",
+  "en": "adds, added",
+  "es": "añade, añadido"
+ },
+ {
+  "abbr": "s.vv.",
+  "en": "under the words",
+  "es": "bajo las palabras"
+ },
+ {
+  "abbr": "sq.",
+  "en": "and the following one",
+  "es": "y el siguiente"
+ },
+ {
+  "abbr": "loc.cit.",
+  "en": "in the place cited",
+  "es": "en el lugar citado"
+ },
+ {
+  "abbr": "id.",
+  "en": "the same author",
+  "es": "el mismo autor"
+ },
+ {
+  "abbr": "ead.",
+  "en": "the same author (feminine)",
+  "es": "la misma autora"
+ },
+ {
+  "abbr": "ad loc.",
+  "en": "at the place",
+  "es": "en el lugar correspondiente"
+ },
+ {
+  "abbr": "s.l.",
+  "en": "without place of publication",
+  "es": "sin lugar de edición"
+ },
+ {
+  "abbr": "s.a.",
+  "en": "without year",
+  "es": "sin año"
+ },
+ {
+  "abbr": "ca.",
+  "en": "around, approximately",
+  "es": "alrededor de, aproximadamente"
+ },
+ {
+  "abbr": "fr.",
+  "en": "fragment",
+  "es": "fragmento"
+ },
+ {
+  "abbr": "frr.",
+  "en": "fragments",
+  "es": "fragmentos"
+ },
+ {
+  "abbr": "schol.",
+  "en": "scholium, ancient commentary note",
+  "es": "escolio"
+ },
+ {
+  "abbr": "del.",
+  "en": "deleted",
+  "es": "suprimido"
+ },
+ {
+  "abbr": "secl.",
+  "en": "bracketed as spurious",
+  "es": "secluido, entre corchetes por espurio"
+ },
+ {
+  "abbr": "transp.",
+  "en": "transposed",
+  "es": "transpuesto"
+ },
+ {
+  "abbr": "coni.",
+  "en": "conjectured",
+  "es": "conjeturado"
+ },
+ {
+  "abbr": "corr.",
+  "en": "corrected",
+  "es": "corregido"
+ },
+ {
+  "abbr": "dub.",
+  "en": "doubtful",
+  "es": "dudoso"
+ },
+ {
+  "abbr": "lac.",
+  "en": "lacuna, gap in the text",
+  "es": "laguna"
+ },
+ {
+  "abbr": "marg.",
+  "en": "in the margin",
+  "es": "en el margen"
+ },
+ {
+  "abbr": "ras.",
+  "en": "on an erasure",
+  "es": "sobre raspadura"
+ },
+ {
+  "abbr": "suppl.",
+  "en": "supplied",
+  "es": "suplido"
+ },
+ {
+  "abbr": "ed.",
+  "en": "editor, edition",
+  "es": "editor, edición"
+ },
+ {
+  "abbr": "edd.",
+  "en": "editors",
+  "es": "editores"
+ },
+ {
+  "abbr": "cett.",
+  "en": "the rest",
+  "es": "los demás"
+ },
+ {
+  "abbr": "rell.",
+  "en": "the remaining ones",
+  "es": "los restantes"
+ },
+ {
+  "abbr": "ap.",
+  "en": "in the work of, cited by",
+  "es": "en la obra de, citado por"
+ },
+ {
+  "abbr": "init.",
+  "en": "at the beginning",
+  "es": "al principio"
+ },
+ {
+  "abbr": "fin.",
+  "en": "at the end",
+  "es": "al final"
+ },
+ {
+  "abbr": "v.",
+  "en": "verse; see",
+  "es": "verso; véase"
+ },
+ {
+  "abbr": "vv.",
+  "en": "verses",
+  "es": "versos"
+ },
+ {
+  "abbr": "abs.",
+  "en": "absolutely",
+  "es": "en sentido absoluto"
+ },
+ {
+  "abbr": "c.",
+  "en": "with",
+  "es": "con"
+ },
+ {
+  "abbr": "usu.",
+  "en": "usually",
+  "es": "habitualmente"
+ },
+ {
+  "abbr": "prob.",
+  "en": "probably",
+  "es": "probablemente"
+ },
+ {
+  "abbr": "perh.",
+  "en": "perhaps",
+  "es": "quizás"
+ },
+ {
+  "abbr": "esp.",
+  "en": "especially",
+  "es": "especialmente"
+ },
+ {
+  "abbr": "freq.",
+  "en": "frequently",
+  "es": "frecuentemente"
+ },
+ {
+  "abbr": "metaph.",
+  "en": "metaphorically",
+  "es": "metafóricamente"
+ },
+ {
+  "abbr": "Lat.",
+  "en": "Latin",
+  "es": "latín"
+ },
+ {
+  "abbr": "expl.",
+  "en": "explained",
+  "es": "explicado"
+ },
+ {
+  "abbr": "signf.",
+  "en": "signification",
+  "es": "significación"
+ },
+ {
+  "abbr": "w.",
+  "en": "with",
+  "es": "con"
+ },
+ {
+  "abbr": "foll.",
+  "en": "followed by",
+  "es": "seguido por"
+ },
+ {
+  "abbr": "prec.",
+  "en": "preceded by",
+  "es": "precedido por"
+ },
+ {
+  "abbr": "dim.",
+  "en": "diminutive",
+  "es": "diminutivo"
+ },
+ {
+  "abbr": "Comp.",
+  "en": "comparative",
+  "es": "comparativo"
+ },
+ {
+  "abbr": "Sup.",
+  "en": "superlative",
+  "es": "superlativo"
+ },
+ {
+  "abbr": "freq. in",
+  "en": "frequently in",
+  "es": "frecuentemente en"
+ },
+ {
+  "abbr": "expld.",
+  "en": "explained",
+  "es": "explicado"
+ },
+ {
+  "abbr": "interpol.",
+  "en": "interpolated",
+  "es": "interpolado"
+ },
+ {
+  "abbr": "sts.",
+  "en": "sometimes",
+  "es": "a veces"
+ },
+ {
+  "abbr": "lit.",
+  "en": "literally",
+  "es": "literalmente"
+ },
+ {
+  "abbr": "prop.",
+  "en": "properly",
+  "es": "propiamente"
+ },
+ {
+  "abbr": "opp.",
+  "en": "opposed to",
+  "es": "opuesto a"
+ },
+ {
+  "abbr": "abbrev.",
+  "en": "abbreviated",
+  "es": "abreviado"
+ },
+ {
+  "abbr": "expld. as",
+  "en": "explained as",
+  "es": "explicado como"
+ },
+ {
+  "abbr": "freq. with",
+  "en": "frequently with",
+  "es": "frecuentemente con"
+ },
+ {
+  "abbr": "esp. in",
+  "en": "especially in",
+  "es": "especialmente en"
+ },
+ {
+  "abbr": "usu. with",
+  "en": "usually with",
+  "es": "habitualmente con"
+ },
+ {
+  "abbr": "prob. for",
+  "en": "probably for",
+  "es": "probablemente por"
+ },
+ {
+  "abbr": "perh. for",
+  "en": "perhaps for",
+  "es": "quizás por"
+ },
+ {
+  "abbr": "ord.",
+  "en": "ordinarily",
+  "es": "ordinariamente"
+ },
+ {
+  "abbr": "Adv.",
+  "en": "adverb",
+  "es": "adverbio"
+ },
+ {
+  "abbr": "Adj.",
+  "en": "adjective",
+  "es": "adjetivo"
+ },
+ {
+  "abbr": "Lat. for",
+  "en": "Latin for",
+  "es": "latín por"
+ },
+ {
+  "abbr": "signf. of",
+  "en": "signification of",
+  "es": "significación de"
+ },
+ {
+  "abbr": "foll. by",
+  "en": "followed by",
+  "es": "seguido por"
+ },
+ {
+  "abbr": "abl.",
+  "en": "ablative",
+  "es": "ablativo"
+ },
+ {
+  "abbr": "sub.",
+  "en": "substantive, noun",
+  "es": "sustantivo"
+ },
+ {
+  "abbr": "adj.",
+  "en": "adjective",
+  "es": "adjetivo"
+ },
+ {
+  "abbr": "adv.",
+  "en": "adverb",
+  "es": "adverbio"
+ },
+ {
+  "abbr": "prep.",
+  "en": "preposition",
+  "es": "preposición"
+ },
+ {
+  "abbr": "conj. (part.)",
+  "en": "conjunction",
+  "es": "conjunción"
+ },
+ {
+  "abbr": "interj.",
+  "en": "interjection",
+  "es": "interjección"
+ },
+ {
+  "abbr": "pron.",
+  "en": "pronoun",
+  "es": "pronombre"
+ },
+ {
+  "abbr": "num.",
+  "en": "numeral",
+  "es": "numeral"
+ },
+ {
+  "abbr": "reduplic.",
+  "en": "reduplicated",
+  "es": "reduplicado"
+ },
+ {
+  "abbr": "augm.",
+  "en": "augment",
+  "es": "aumento"
+ },
+ {
+  "abbr": "intr.",
+  "en": "intransitive",
+  "es": "intransitivo"
+ },
+ {
+  "abbr": "trans.",
+  "en": "transitive",
+  "es": "transitivo"
+ },
+ {
+  "abbr": "impers.",
+  "en": "impersonal",
+  "es": "impersonal"
+ },
+ {
+  "abbr": "abbreviation",
+  "en": "abbreviation",
+  "es": "abreviatura"
+ },
+ {
+  "abbr": "l.c.",
+  "en": "in the passage cited",
+  "es": "en el pasaje citado"
+ },
+ {
+  "abbr": "s.v.l.",
+  "en": "under the relevant word",
+  "es": "bajo la palabra correspondiente"
+ },
+ {
+  "abbr": "NT",
+  "en": "New Testament",
+  "es": "Nuevo Testamento"
+ },
+ {
+  "abbr": "LXX",
+  "en": "Septuagint",
+  "es": "Septuaginta"
+ },
+ {
+  "abbr": "Hom.",
+  "en": "Homer",
+  "es": "Homero"
+ },
+ {
+  "abbr": "sim.",
+  "en": "similarly",
+  "es": "de modo semejante"
+ },
+ {
+  "abbr": "gener.",
+  "en": "generally",
+  "es": "generalmente"
+ },
+ {
+  "abbr": "esp.",
+  "en": "especially",
+  "es": "especialmente"
+ },
+ {
+  "abbr": "abs. usage",
+  "en": "absolute usage",
+  "es": "uso absoluto"
+ },
+ {
+  "abbr": "Comp. & Sup.",
+  "en": "comparative and superlative",
+  "es": "comparativo y superlativo"
+ }
+]

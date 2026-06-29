@@ -1,0 +1,671 @@
+[
+ {
+  "scheme": "erasmian",
+  "lang": "es",
+  "description": "Transliteration table mapping Ancient Greek to a phonetic respelling in Spanish orthography, so a standard Spanish-system TTS voice (NVDA/JAWS) approximates the Spanish-school Erasmian pronunciation. Key Spanish-Erasmian conventions: chi (χ) is read like Spanish 'j' (velar fricative); theta (θ) like Spanish 'z/c' (interdental); phi (φ) as 'f'; eta (η) as a long 'e' rendered just 'e'; omega (ω) as 'o'; upsilon (υ) as 'u' (the French-u target is approximated by Spanish 'u' since Spanish TTS has no front rounded vowel). Greek diphthongs are kept distinct. Zeta (ζ) is rendered 'ds' (the dz/zd Erasmian value); bare Spanish 'z' would be read interdentally like theta, so 'ds' keeps zeta audible as an affricate-like cluster. CRITICAL Spanish-orthography traps that the renderer must avoid: (1) Spanish 'g' before e/i is a soft /x/ — so a hard Greek /g/ before a front vowel must be written 'gu' (γε→gue, γι→gui); (2) Spanish 'c' before e/i is interdental /θ/ — so Greek κ is always written 'k', never 'c'; (3) the digraph 'gu' before e/i is /g/ with a SILENT u, which is exactly what we want for γε/γι, but before a/o/u plain 'g' already gives /g/; (4) Spanish 'h' is silent, so the Erasmian rough-breathing /h/ is written 'j' to be audible. All renderings use only letters Spanish TTS pronounces natively.",
+  "vowels": {
+   "α": "a",
+   "ε": "e",
+   "η": "e",
+   "ι": "i",
+   "ο": "o",
+   "ω": "o",
+   "υ": "u"
+  },
+  "consonants": {
+   "β": "b",
+   "γ": "g",
+   "δ": "d",
+   "ζ": "ds",
+   "θ": "z",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "f",
+   "χ": "j",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "ai",
+   "ει": "ei",
+   "οι": "oi",
+   "υι": "ui",
+   "αυ": "au",
+   "ευ": "eu",
+   "ηυ": "eu",
+   "ου": "u",
+   "ωυ": "ou"
+  },
+  "special_clusters": {
+   "γγ before a/o/u or consonant": "ng (gamma-gamma = nasal /ŋ/ + hard /g/, e.g. would render plain 'ng')",
+   "γγ before e/i": "ngu (nasal /ŋ/ + hard /g/; the 'u' is the silent Spanish guard so 'g' stays hard before a front vowel, e.g. ἄγγελος -> ánguelos)",
+   "γκ": "nk (gamma before kappa = nasal /ŋ/ + /k/; use 'k' not 'c')",
+   "γξ": "nks (gamma before xi)",
+   "γχ": "nj (gamma before chi = nasal /ŋ/ + Spanish velar 'j')",
+   "γ before a/o/u": "g (plain Spanish 'g' is already hard before back vowels)",
+   "γ before e/i": "gu (write 'gu' so Spanish TTS reads hard /g/, the u being silent; γε=gue, γι=gui — NOT 'ge/gi' which Spanish reads as /xe,xi/)",
+   "κ before e/i": "k (use 'k' not 'c'; Spanish 'c' before e/i is interdental /θ/)",
+   "θ": "z (interdental; Spanish-school theta = Spanish z/c)",
+   "χ before e/i": "j (Spanish-school chi = velar fricative; write 'j' not 'g' before front vowels so TTS keeps the velar fricative, e.g. χε=je, χι=ji)",
+   "ζ": "ds (avoid bare 's' or 'z': Spanish z is interdental like theta)",
+   "ρρ": "rr (double rho = Spanish trilled rr)",
+   "initial ρ / ῥ": "rr (word-initial rho is trilled in Spanish, write rr)"
+  },
+  "rough_breathing_rule": "The rough breathing (spiritus asper, ῾) is Erasmian /h/. Standard Spanish 'h' is silent, so a Spanish TTS would not voice it; render rough breathing as Spanish 'j' so the aspiration is audible (ἡ -> 'je', ὁ -> 'jo', ἑπτά -> 'jeptá', Ἑλλάς -> 'Jellás'). The 'j' is placed before the vowel that carries the breathing. If the user prefers silent classical orthography over audibility, a silent 'h' may be used instead, but 'j' is recommended for TTS. The smooth breathing (᾿) marks no onset and is not rendered.",
+  "accent_rule": "Greek pitch accents (acute ´, grave `, circumflex ῀) all mark the stressed syllable and are all treated as stress accents here. Place a Spanish acute tilde (á é í ó ú) on the rendered stressed vowel ONLY when the natural Spanish stress rule (penultimate for words ending in vowel/n/s, final otherwise) would put the stress on a DIFFERENT syllable than the Greek accent. When the Greek stress already coincides with the default Spanish position, omit the tilde to avoid redundant/double marking (e.g. λόγος -> 'logos', not 'lógos', since Spanish already stresses the penult of a word ending in -s). Grave is treated identically to acute. Circumflex marks stress on a long vowel/diphthong and is rendered the same single stress mark; for a stressed diphthong, the tilde goes on the first vowel of the rendered diphthong (e.g. οἶκος default-stresses 'oi' already, so 'oikos').",
+  "examples": [
+   {
+    "greek": "λόγος",
+    "rendered": "logos"
+   },
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "ánzropos"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "zeós"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "psijé"
+   },
+   {
+    "greek": "φιλοσοφία",
+    "rendered": "filosofía"
+   },
+   {
+    "greek": "ἄγγελος",
+    "rendered": "ánguelos"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "basileús"
+   },
+   {
+    "greek": "χάρις",
+    "rendered": "járis"
+   },
+   {
+    "greek": "ζωή",
+    "rendered": "dsoé"
+   },
+   {
+    "greek": "οἶκος",
+    "rendered": "oikos"
+   },
+   {
+    "greek": "γένος",
+    "rendered": "guénos"
+   },
+   {
+    "greek": "ἡμέρα",
+    "rendered": "jeméra"
+   }
+  ]
+ },
+ {
+  "scheme": "erasmian",
+  "lang": "en",
+  "description": "Phonetic respelling of Ancient Greek into English orthography for an English-system TTS (NVDA/JAWS) under the Erasmian/academic-classroom scheme. Renderings use only English letters so a standard English TTS voice reads them aloud approximately correctly. Key conventions: epsilon = short \"eh\" (as in \"pet\"); eta = long \"ay\" (as in \"fate\"), which in strict Erasmian coincides with the diphthong ει, so eta and ει are deliberately rendered the same; omicron = short \"o\", omega = long \"oh\"; upsilon (French/German u) has no clean English vowel, so it is approximated \"ew\" (as in \"few\"). Consonants: beta = b, gamma = g (but velar nasal \"ng\" before another velar), delta = d, zeta = \"zd\" (classical) reading; theta = aspirated t rendered \"th\", phi = aspirated p rendered \"ph\", chi = aspirated k rendered \"kh\". Stress is conveyed by capitalizing the accented syllable's vowel; the per-letter table gives the base mapping.",
+  "vowels": {
+   "α": "ah",
+   "ε": "eh",
+   "η": "ay",
+   "ι": "ee",
+   "ο": "o",
+   "υ": "ew",
+   "ω": "oh"
+  },
+  "consonants": {
+   "β": "b",
+   "γ": "g",
+   "δ": "d",
+   "ζ": "zd",
+   "θ": "th",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "ph",
+   "χ": "kh",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "eye",
+   "ει": "ay",
+   "οι": "oy",
+   "υι": "wee",
+   "αυ": "ow",
+   "ευ": "eh-oo",
+   "ου": "oo",
+   "ηυ": "ay-oo"
+  },
+  "special_clusters": {
+   "γγ": "ng (gamma before gamma = velar nasal, e.g. ANG-geh-los)",
+   "γκ": "nk (gamma before kappa = velar nasal + k)",
+   "γξ": "nks (gamma before xi)",
+   "γχ": "nkh (gamma before chi)",
+   "ρρ": "rr (doubled rho, trilled)",
+   "initial-ρ": "rh (rho at word start takes rough breathing: rh)"
+  },
+  "rough_breathing_rule": "A rough breathing mark over an initial vowel or diphthong adds an English \"h\" before the vowel sound (e.g. ἡ = \"hay\", ὁ = \"ho\", αἱ = \"high\"). A smooth breathing adds nothing. Initial rho with rough breathing is rendered \"rh\".",
+  "accent_rule": "Acute, grave, and circumflex accents all mark the stressed syllable in this rendering (Erasmian classroom practice ignores the pitch distinction). The stressed syllable's vowel rendering is written in UPPERCASE so the TTS hearer can locate the stress; unaccented syllables stay lowercase. Grave is treated identically to acute for stress placement.",
+  "examples": [
+   {
+    "greek": "λόγος",
+    "rendered": "LO-gos"
+   },
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "AHN-throh-pos"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "the-OS"
+   },
+   {
+    "greek": "ἀγάπη",
+    "rendered": "ah-GAH-pay"
+   },
+   {
+    "greek": "φιλοσοφία",
+    "rendered": "phee-lo-so-PHEE-ah"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "psew-KHAY"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "bah-see-LEHOOS"
+   },
+   {
+    "greek": "ἄγγελος",
+    "rendered": "AHNG-geh-los"
+   }
+  ]
+ },
+ {
+  "scheme": "modern",
+  "lang": "es",
+  "description": "Transliteration of Greek into a phonetic respelling using Spanish orthography, targeting the MODERN (contemporary) Greek pronunciation scheme. The output is fed letter-for-letter to a standard Spanish-language TTS voice (NVDA/JAWS) so the synthesized speech approximates modern Greek. Only letters/digraphs a Spanish TTS reads with the intended sound are used. Key choices: 'i' for all iotacised vowels (eta, iota, upsilon, ei, oi, ui); 'v'/'f' for the voiced/voiceless realizations of av/ev; 'z' for theta because Castilian 'z' = unvoiced 'th' as in 'thin'; 'd' for delta because Spanish intervocalic 'd' = voiced 'th' as in 'this'; 'j' for chi because Spanish 'j' = velar fricative [x]; gamma's voiced velar fricative is approximated by 'g' before a/o/u and consonants, and 'gu' before e/i (so Spanish does not soften it to [x]); kappa is forced with 'k' or 'qu' so it never becomes [θ]/[s]. Stress is the Spanish acute on the stressed vowel, which Spanish TTS honors. Spanish has only five vowel qualities and no /h/, so vowel length, pitch accent and rough breathing are dropped, matching modern Greek.",
+  "vowels": {
+   "α": "a",
+   "ε": "e",
+   "η": "i",
+   "ι": "i",
+   "ο": "o",
+   "υ": "i",
+   "ω": "o"
+  },
+  "consonants": {
+   "β": "v",
+   "γ": "g",
+   "δ": "d",
+   "ζ": "z",
+   "θ": "z",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "f",
+   "χ": "j",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "e",
+   "ει": "i",
+   "οι": "i",
+   "υι": "i",
+   "ου": "u",
+   "αυ": "av / af",
+   "ευ": "ev / ef",
+   "ηυ": "iv / if"
+  },
+  "special_clusters": {
+   "γ before e/i": "gu (e.g. γε -> gue, γι -> gui, so it is not softened to [x])",
+   "γ before a/o/u/consonant": "g",
+   "ζ note": "modern zeta is voiced [z]; Spanish lacks it, so 's'-sounding 'z' (or 's') is the closest a Spanish TTS produces; rendered as 'z'/'s'",
+   "κ before e/i": "qu (κε -> que, κι -> qui) to keep [k]",
+   "γγ": "ng (γγε/γγι -> ngu) e.g. αγγελος -> anguelos",
+   "γκ (initial)": "g / gu before e,i (γκολ -> gol)",
+   "γκ (medial)": "ng / ngu before e,i",
+   "γξ": "nks",
+   "γχ": "nj",
+   "μπ (initial)": "b (μπαρ -> bar)",
+   "μπ (medial)": "mb",
+   "ντ (initial)": "d",
+   "ντ (medial)": "nd",
+   "τζ": "ds (approx of [dz]; Spanish has no [dz])",
+   "τσ": "ts",
+   "double consonants (λλ, ττ, σσ, etc.)": "single (modern Greek does not geminate) e.g. Ελλάς -> elás"
+  },
+  "rough_breathing_rule": "Rough breathing (spiritus asper, ῾) is NOT rendered. Modern Greek has lost /h/ and Spanish has no /h/ phoneme (the letter 'h' is silent anyway), so the leading aspiration is dropped. Smooth breathing is likewise ignored. The bare initial vowel is rendered with its normal Spanish vowel letter.",
+  "accent_rule": "The Greek accent (acute, grave, or circumflex) only marks WHICH syllable is stressed; in modern Greek all three are a single stress with no pitch or length distinction. Render stress by placing a Spanish acute (á é í ó ú) on the vowel of the stressed syllable; Spanish TTS then stresses it. When the stressed nucleus is a diphthong, put the acute on the rendered vowel that carries the syllable (ού -> ú, εί -> í, οί -> í, αύ -> áv/áf, εύ -> év/éf). Grave and circumflex are both rendered as a plain acute. For clitics with no relevant marked syllable, no accent is written.",
+  "examples": [
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "ánzropos"
+   },
+   {
+    "greek": "λόγος",
+    "rendered": "lógos"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "zeós"
+   },
+   {
+    "greek": "ἀγάπη",
+    "rendered": "agápi"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "vasiléfs"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "psijí"
+   },
+   {
+    "greek": "εὐαγγέλιον",
+    "rendered": "evanguélion"
+   },
+   {
+    "greek": "ἡμέρα",
+    "rendered": "iméra"
+   },
+   {
+    "greek": "χαῖρε",
+    "rendered": "jére"
+   },
+   {
+    "greek": "οἶκος",
+    "rendered": "íkos"
+   },
+   {
+    "greek": "φιλοσοφία",
+    "rendered": "filosofía"
+   },
+   {
+    "greek": "Ἑλλάς",
+    "rendered": "elás"
+   },
+   {
+    "greek": "γυναίκα",
+    "rendered": "guinéka"
+   },
+   {
+    "greek": "νύχτα",
+    "rendered": "níjta"
+   },
+   {
+    "greek": "αὐτός",
+    "rendered": "aftós"
+   }
+  ]
+ },
+ {
+  "scheme": "modern",
+  "lang": "en",
+  "description": "Phonetic transliteration of Greek text into English (Latin) orthography that approximates the MODERN (contemporary) Greek pronunciation, tuned so a standard English-language TTS voice (NVDA/JAWS) reads it roughly correctly. Core features: full iotacism (eta, iota, upsilon, ei, oi, ui all render as the English \"ee\" sound); beta = v; gamma = a voiced fricative approximated by \"y\" before front vowels (e/i sounds) and \"gh\" before back vowels (a/o/oo sounds); delta = \"th\" (voiced, as in \"this\"); theta = \"th\" (voiceless, as in \"thin\") — English spelling cannot distinguish the two TH sounds, so both render as \"th\"; chi = a back fricative approximated as \"kh\"; au/eu render as \"af/av\" and \"ef/ev\" depending on whether the following sound is voiceless or voiced; mp = b (word-initial) or mb (medial); nt = d (word-initial) or nd (medial); gk/gg = g/ng. Only plain English letters are used so the synthesizer pronounces them. Renderings are an approximation: English TTS has no true voiced velar fricative or distinct voiceless/voiced TH spelling, so several Greek sounds are mapped to the nearest English-spellable equivalent.",
+  "vowels": {
+   "α": "a",
+   "ε": "e",
+   "η": "ee",
+   "ι": "ee",
+   "ο": "o",
+   "υ": "ee",
+   "ω": "o"
+  },
+  "consonants": {
+   "β": "v",
+   "γ": "gh",
+   "δ": "th",
+   "ζ": "z",
+   "θ": "th",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "f",
+   "χ": "kh",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "e",
+   "ει": "ee",
+   "οι": "ee",
+   "υι": "ee",
+   "ου": "oo",
+   "αυ": "av",
+   "ευ": "ev",
+   "ηυ": "eev"
+  },
+  "special_clusters": {
+   "αυ_before_voiceless": "af (au before theta, kappa, ksi, pi, sigma, tau, phi, chi, psi -> 'af', e.g. autos -> aftos)",
+   "αυ_before_voiced": "av (au before a vowel or voiced consonant -> 'av')",
+   "ευ_before_voiceless": "ef (eu before a voiceless consonant -> 'ef', e.g. eutyches -> efteekhees)",
+   "ευ_before_voiced": "ev (eu before a vowel or voiced consonant -> 'ev')",
+   "μπ": "b (mp -> 'b' word-initially; 'mb' between vowels)",
+   "ντ": "d (nt -> 'd' word-initially; 'nd' between vowels)",
+   "γγ": "ng (gamma-gamma -> 'ng' as in 'angle', g hard)",
+   "γκ": "g (gamma-kappa -> 'g' word-initially; 'ng' medially)",
+   "γξ": "nks (gamma-ksi -> 'nks')",
+   "γχ": "nkh (gamma-chi -> 'nkh')",
+   "γ_before_front_vowel": "y (gamma before e/i-type vowels -> 'y', e.g. genos -> yenos)",
+   "γ_before_back_vowel": "gh (gamma before a/o/oo -> 'gh', a soft throaty g)",
+   "τζ": "dz",
+   "σσ": "s",
+   "ββ": "v",
+   "λλ": "l",
+   "μμ": "m",
+   "νν": "n",
+   "ππ": "p",
+   "ρρ": "r",
+   "ττ": "t"
+  },
+  "rough_breathing_rule": "The rough breathing (dasia, the 'h' aspiration on initial vowels and on rho) is SILENT in Modern Greek and is therefore dropped entirely in the rendering (no 'h' is written). Likewise the smooth breathing is not rendered. Example: he (the feminine article) renders as \"ee\", not \"hee\"; rho with rough breathing renders as plain \"r\".",
+  "accent_rule": "All Greek accents (acute, grave, circumflex) are realized identically as a single STRESS accent in Modern Greek. The accented syllable is stressed; grave/circumflex are treated the same as acute. For TTS the stress is marked by CAPITALIZING the stressed vowel/syllable; recommended is to capitalize the whole stressed syllable, e.g. anthropos -> ANthropos. Accent never changes vowel quality (an accented eta is still \"ee\").",
+  "examples": [
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "ANthropos"
+   },
+   {
+    "greek": "λόγος",
+    "rendered": "LOghos"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "theOS"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "vaseeLEFS"
+   },
+   {
+    "greek": "ἀγάπη",
+    "rendered": "aGHApee"
+   },
+   {
+    "greek": "εὐαγγέλιον",
+    "rendered": "evangGHEleeon"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "pseeKHEE"
+   },
+   {
+    "greek": "οὐρανός",
+    "rendered": "ooraNOS"
+   },
+   {
+    "greek": "γῆ",
+    "rendered": "yee"
+   },
+   {
+    "greek": "αὐτός",
+    "rendered": "afTOS"
+   },
+   {
+    "greek": "ἡμέρα",
+    "rendered": "eeMEra"
+   },
+   {
+    "greek": "χάρις",
+    "rendered": "KHArees"
+   },
+   {
+    "greek": "εἰρήνη",
+    "rendered": "eeREEnee"
+   },
+   {
+    "greek": "υἱός",
+    "rendered": "eeOS"
+   },
+   {
+    "greek": "ἅγιος",
+    "rendered": "AYeeos"
+   }
+  ]
+ },
+ {
+  "scheme": "restored-attic",
+  "lang": "es",
+  "description": "Phonetic respelling of reconstructed 5th-century BCE Attic Greek using only Spanish-natural letter sequences, so a standard Spanish-system TTS (NVDA/JAWS) approximates the restored pronunciation. Vowel LENGTH is rendered by doubling the vowel (the only length cue a Spanish TTS lengthens), since Spanish has no phonemic length: eta = long open e (rendered \"ee\"), omega = long o (\"oo\"), spurious-ou = long u (\"uu\"). Upsilon = front rounded [y] (French u / German ü) which Spanish lacks, approximated by \"iu\" as a syllabic vowel; but as a DIPHTHONG OFFGLIDE (αυ, ευ, ηυ) the second element is the older back glide and is rendered plain \"u\". Zeta in restored Attic is the cluster [zd], rendered \"zd\". Aspirated stops theta/phi/chi are the hardest: Spanish \"h\" is silent and Spanish \"j/g\" is a harsh velar fricative, so true aspiration cannot be spelled. Best Spanish-readable approximations: theta -> \"t\" (plain dental, aspiration lost), phi -> \"f\" (the sound Spanish ears and modern Greek both reach for; closest readable aspirated labial), chi -> \"j\" (Spanish velar fricative, the only Spanish grapheme in the back-of-mouth region). These trade phonetic precision for TTS readability, per the rules. Pitch accent is not phonable; acute/grave/circumflex are all mapped to Spanish stress (written tilde) on the rendered vowel so the TTS at least stresses the right syllable.",
+  "vowels": {
+   "α": "a",
+   "ε": "e",
+   "η": "ee",
+   "ι": "i",
+   "ο": "o",
+   "ω": "oo",
+   "υ": "iu"
+  },
+  "consonants": {
+   "β": "b",
+   "γ": "g",
+   "δ": "d",
+   "ζ": "zd",
+   "θ": "t",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "f",
+   "χ": "j",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "ai",
+   "ει": "ee",
+   "οι": "oi",
+   "υι": "iui",
+   "αυ": "au",
+   "ευ": "eu",
+   "ηυ": "eeu",
+   "ου": "uu",
+   "ᾳ": "aa",
+   "ῃ": "ee",
+   "ῳ": "oo"
+  },
+  "special_clusters": {
+   "γγ": "ng (gamma before gamma is a velar nasal: first gamma -> n, e.g. angelos)",
+   "γκ": "nk (gamma before kappa = velar nasal + k)",
+   "γχ": "nj (gamma before chi = velar nasal + aspirated velar, rendered nj)",
+   "γξ": "nks (gamma before xi)",
+   "ει": "ee (genuine long close [e:] in restored Attic, NOT a glide; spelled ee like eta, though eta is long OPEN; the open/close distinction is not spellable for a Spanish TTS so both collapse to ee)",
+   "ου": "uu (spurious diphthong = genuine long close [u:]; upsilon-fronting does NOT apply here)",
+   "ζ": "zd ([zd] cluster, e.g. trapezd-)",
+   "ρρ": "rr (Spanish trill, matches doubled rho)",
+   "initial ρ": "r (rough-breathed rho; aspiration unspellable in Spanish, plain r)",
+   "σ before voiced consonant": "s (kept as s; Spanish TTS already voices s to [z] before a voiced consonant, e.g. mismo, so the restored [z] allophone emerges automatically)",
+   "υ as offglide": "u (in αυ/ευ/ηυ the second element is rendered plain u, not iu)"
+  },
+  "rough_breathing_rule": "Rough breathing (spiritus asper, the h-sound) cannot be rendered: Spanish \"h\" is always silent and would be dropped by the TTS, and Spanish \"j\" would inject a harsh velar fricative that is wrong word-initially. Therefore initial rough breathing is LEFT UNWRITTEN (the aspiration is lost), e.g. ho -> \"o\", hee -> \"ee\", hippos -> \"ippos\". This is a deliberate accuracy-for-readability trade per the rules. Smooth breathing is likewise unwritten (it marks absence of h). Attic has no intervocalic h, so nothing is added anywhere.",
+  "accent_rule": "A Spanish TTS cannot reproduce pitch (rising/falling tone), so all three Greek accents collapse to Spanish STRESS marking. The accented Greek vowel receives a Spanish written tilde on its rendered form so the synthesizer stresses that syllable: acute (oxia), grave (varia), and circumflex (perispomeni) all map to a stressed rendered vowel. For doubled long vowels the accent is placed on the FIRST element (e.g. eta accented -> \"ée\", omega -> \"óo\"). For diphthongs the accent goes on the first (syllabic) element (e.g. αῖ -> \"ái\", εύ -> \"eú\" only where the upsilon is the syllabic peak — normally the first element is stressed). Where Spanish default stress would already fall correctly, the tilde is still written for safety, since the rendered forms are non-Spanish words and the TTS applies penult/final rules unpredictably.",
+  "examples": [
+   {
+    "greek": "λόγος",
+    "rendered": "lógos"
+   },
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "ántroopos"
+   },
+   {
+    "greek": "φιλοσοφία",
+    "rendered": "filosofía"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "teós"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "psiujée"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "basileús"
+   },
+   {
+    "greek": "ἀλήθεια",
+    "rendered": "aléeteia"
+   },
+   {
+    "greek": "Σωκράτης",
+    "rendered": "Sookrátees"
+   },
+   {
+    "greek": "ζῷον",
+    "rendered": "zdóoon"
+   },
+   {
+    "greek": "ἄγγελος",
+    "rendered": "ángelos"
+   },
+   {
+    "greek": "χαῖρε",
+    "rendered": "jáire"
+   },
+   {
+    "greek": "οὐρανός",
+    "rendered": "uuranós"
+   }
+  ]
+ },
+ {
+  "scheme": "restored-attic",
+  "lang": "en",
+  "description": "Transliteration of Ancient Greek into English-orthography phonetic spelling targeting a standard English TTS voice (NVDA/JAWS) under the reconstructed 5th-century-BCE Attic scheme. Vowel length is encoded by spelling: long vowels use doubled or digraph spellings the English voice reads as long, short vowels use single letters. Pitch accent cannot be voiced by an English TTS, so it is converted to English-style STRESS by capitalizing the stressed vowel(s) of the rendered syllable. Aspirated stops theta/phi/chi are rendered with English aspirate-bearing spellings (th, f, kh) since an English TTS produces aspiration on these naturally; chi is kept as 'kh' so it stays audibly distinct from unaspirated kappa ('k'). Eta is the long OPEN e (open 'eh', distinct from the short close epsilon and from the long close ei); omega is long o (drawn out, distinct from short omicron); omicron-upsilon (ou) is long u ('oo'); upsilon alone is the front rounded u-umlaut approximated as 'ew'; the diphthong eu is the sequence e+u ('eh-oo'), kept distinct from bare upsilon; zeta is the cluster 'zd'. The goal is approximate, listenable correctness, not phonemic precision.",
+  "vowels": {
+   "α": "ah (short) / aa (long, drawn out)",
+   "ε": "eh (short close e)",
+   "η": "eh (long OPEN e, drawn out — distinct from short epsilon)",
+   "ι": "ih (short) / ee (long)",
+   "ο": "oh (short)",
+   "υ": "ew (front rounded u-umlaut, short) / ew-w (long)",
+   "ω": "ohh (long o, drawn out — distinct from short omicron)"
+  },
+  "consonants": {
+   "β": "b",
+   "γ": "g",
+   "δ": "d",
+   "ζ": "zd",
+   "θ": "th",
+   "κ": "k",
+   "λ": "l",
+   "μ": "m",
+   "ν": "n",
+   "ξ": "ks",
+   "π": "p",
+   "ρ": "r",
+   "σ": "s",
+   "ς": "s",
+   "τ": "t",
+   "φ": "f",
+   "χ": "kh",
+   "ψ": "ps"
+  },
+  "diphthongs": {
+   "αι": "eye",
+   "ει": "ay (long close e)",
+   "οι": "oy",
+   "υι": "wee",
+   "αυ": "ow",
+   "ευ": "eh-oo (e-glide plus u)",
+   "ηυ": "eh-oo (long open e plus u)",
+   "ου": "oo"
+  },
+  "special_clusters": {
+   "γγ": "ng (gamma before gamma = nasal, as in 'anger')",
+   "γκ": "nk (gamma before kappa = nasal)",
+   "γχ": "ng-kh (gamma before chi = nasal plus aspirate)",
+   "γξ": "nks (gamma before xi)",
+   "ζ": "zd (Attic zeta is the cluster z+d)",
+   "θ": "th (aspirated t; English th provides the aspiration)",
+   "φ": "f (aspirated p; rendered f for TTS)",
+   "χ": "kh (aspirated k; kept as kh so it stays distinct from kappa 'k')",
+   "ρρ": "rr",
+   "σθ": "s-th"
+  },
+  "rough_breathing_rule": "Rough breathing (the spiritus asper, marked over an initial vowel/diphthong or rho) is rendered as a leading 'h' before the vowel so the English TTS voices the aspiration: e.g. initial ἁ -> 'hah', ἑ -> 'heh', ὁ -> 'hoh', ὑ -> 'hew', and an initial diphthong takes the h before the whole cluster (αἱ -> 'heye'). Initial ῥ (rough rho) -> 'rh', read by the voice simply as 'r'. Smooth breathing (spiritus lenis) is not rendered (no h).",
+  "accent_rule": "An English TTS cannot reproduce Greek pitch, so each Greek accent (acute ´, grave `, circumflex ˆ) is converted to English lexical STRESS placed on the rendered syllable that carries the accent. In the rendered string this is shown by CAPITALIZING the vowel letters of that syllable (e.g. 'LOH-gos'); a hyphen separates syllables to help the TTS phrase them. Acute, grave, and circumflex all collapse to the same single stress mark since the voice has no pitch contour; the acute/grave/circumflex distinction and the circumflex's internal rise-fall are lost. Unaccented syllables stay lowercase.",
+  "examples": [
+   {
+    "greek": "λόγος",
+    "rendered": "LOH-gos"
+   },
+   {
+    "greek": "ἄνθρωπος",
+    "rendered": "AHN-throh-pos"
+   },
+   {
+    "greek": "φιλοσοφία",
+    "rendered": "fih-loh-soh-FEE-ah"
+   },
+   {
+    "greek": "θεός",
+    "rendered": "theh-OHS"
+   },
+   {
+    "greek": "ζῷον",
+    "rendered": "ZDOH-on"
+   },
+   {
+    "greek": "ψυχή",
+    "rendered": "psew-KHEH"
+   },
+   {
+    "greek": "βασιλεύς",
+    "rendered": "bah-sih-LEH-oos"
+   },
+   {
+    "greek": "ἡμέρα",
+    "rendered": "heh-MEH-rah"
+   },
+   {
+    "greek": "οὐρανός",
+    "rendered": "oo-rah-NOHS"
+   },
+   {
+    "greek": "χαῖρε",
+    "rendered": "KHEYE-reh"
+   }
+  ]
+ }
+]
