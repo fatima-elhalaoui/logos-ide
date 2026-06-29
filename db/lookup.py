@@ -35,10 +35,13 @@ def quick_lookup(word, language="en"):
         conn = sqlite3.connect(dictionary_db_path())
     except sqlite3.Error:
         return None
+    row = None
     try:
         row = conn.execute(
             "SELECT lemma, morph_code, definition, definition_es "
-            "FROM words WHERE form_norm = ? OR lemma = ? LIMIT 1",
+            "FROM words WHERE form_norm = ? OR lemma = ? "
+            "ORDER BY (lemma = form) DESC, "
+            "(morph_code IS NOT NULL AND morph_code != '') DESC, id LIMIT 1",
             (norm, norm),
         ).fetchone()
     except sqlite3.Error:
@@ -135,9 +138,11 @@ class DictionaryLookupWorker(QThread):
 
     # ------------------------------------------------------------------
     def _query(self, cursor, norm):
+        rank = ("ORDER BY (lemma = form) DESC, "
+                "(morph_code IS NOT NULL AND morph_code != '') DESC, id")
         cursor.execute(
             "SELECT lemma, morph_code, definition, definition_es "
-            "FROM words WHERE form_norm = ? LIMIT ?",
+            f"FROM words WHERE form_norm = ? {rank} LIMIT ?",
             (norm, _MAX_RESULTS),
         )
         rows = cursor.fetchall()
@@ -146,7 +151,7 @@ class DictionaryLookupWorker(QThread):
             # a headword without an inflected entry).
             cursor.execute(
                 "SELECT lemma, morph_code, definition, definition_es "
-                "FROM words WHERE form_norm = ? OR lemma = ? LIMIT ?",
+                f"FROM words WHERE form_norm = ? OR lemma = ? {rank} LIMIT ?",
                 (norm, norm, _MAX_RESULTS),
             )
             rows = cursor.fetchall()

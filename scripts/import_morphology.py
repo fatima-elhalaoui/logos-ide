@@ -92,8 +92,10 @@ def main():
     conn.execute("PRAGMA busy_timeout=60000")
     cur = conn.cursor()
 
-    # form_norm -> robinson code (first/most common wins per form).
-    mapping = {}
+    # Collect SURFACE forms (the word as it appears, keeping movable nu) over all
+    # tokens. Dedup by (form_norm, lemma, code) so both ἐστιν and ἐστι are kept if
+    # both occur, but identical analyses collapse.
+    entries = {}  # (form_norm, lemma_norm, code) -> (display_form, lemma)
     books = BOOKS[: args.limit] if args.limit else BOOKS
     for i, book in enumerate(books, 1):
         try:
@@ -105,25 +107,58 @@ def main():
             cols = line.split()
             if len(cols) < 7:
                 continue
-            pos, parse, _word, _text, normalized, lemma = (
+            pos, parse, _text, word, _normalized, lemma = (
                 cols[1], cols[2], cols[3], cols[4], cols[5], cols[6]
             )
-            key = normalize_lookup(normalized)
-            if key and key not in mapping:
-                mapping[key] = morphgnt_to_robinson(pos, parse)
-        print(f"  [{i}/{len(books)}] {book}: {len(mapping)} forms collected")
+            fnorm = normalize_lookup(word)
+            if not fnorm:
+                continue
+            code = morphgnt_to_robinson(pos, parse)
+            ek = (fnorm, normalize_lookup(lemma), code)
+            if ek not in entries:
+                entries[ek] = (word, lemma)
+        print(f"  [{i}/{len(books)}] {book}: {len(entries)} analyses collected")
 
-    print(f"Applying {len(mapping)} morphology codes…")
-    updated = 0
-    for key, code in mapping.items():
-        cur.execute(
-            "UPDATE words SET morph_code = ? WHERE form_norm = ? AND (morph_code IS NULL OR morph_code = '')",
-            (code, key),
-        )
-        updated += cur.rowcount
+    # Map each lemma to its LSJ definition so inserted forms carry the meaning.
+    print("Linking forms to their lemma definitions…")
+    defs = {}
+    for (_fn, lemma_norm, _c) in entries:
+        if lemma_norm and lemma_norm not in defs:
+            row = cur.execute(
+                "SELECT definition, definition_es FROM words WHERE form_norm = ? "
+                "AND definition IS NOT NULL AND definition != '' LIMIT 1",
+                (lemma_norm,),
+            ).fetchone()
+            defs[lemma_norm] = row if row else ("", "")
+
+    updated = inserted = 0
+    for (fnorm, lemma_norm, code), (display, lemma) in entries.items():
+        # Existing rows for this exact form that are the SAME word (same lemma).
+        existing = cur.execute(
+            "SELECT id, lemma, morph_code FROM words WHERE form_norm = ?", (fnorm,)
+        ).fetchall()
+        same_lemma_rows = [
+            (rid, mc) for (rid, rlemma, mc) in existing
+            if normalize_lookup(rlemma) == lemma_norm
+        ]
+
+        if same_lemma_rows:
+            # Annotate same-word rows that lack a code; never touch other words.
+            for rid, mc in same_lemma_rows:
+                if not mc:
+                    cur.execute("UPDATE words SET morph_code = ? WHERE id = ?", (code, rid))
+                    updated += 1
+        else:
+            d_en, d_es = defs.get(lemma_norm, ("", ""))
+            cur.execute(
+                "INSERT INTO words (form, form_norm, lemma, morph_code, definition, definition_es) "
+                "VALUES (?, ?, ?, ?, ?, ?)",
+                (display, fnorm, lemma, code, d_en, d_es),
+            )
+            inserted += 1
     conn.commit()
     conn.close()
-    print(f"Done. Updated {updated} rows with morphology codes.")
+    print(f"Done. Annotated {updated} same-word rows, inserted {inserted} new surface forms.")
     return 0
 
 
