@@ -77,7 +77,7 @@ completa de teclado.
 Requiere **Python 3.11 o superior**.
 
 ```bash
-git clone https://github.com/<su-cuenta>/logos-ide.git
+git clone https://github.com/fatima-elhalaoui/logos-ide.git
 cd logos-ide
 python -m venv venv
 venv\Scripts\activate            # Windows
@@ -91,15 +91,17 @@ funciona de inmediato. Para el diccionario completo de 575 000 formas, instale e
 
 ### Opción B — aplicación empaquetada (sin necesidad de Python)
 
-Descargue la última versión para su sistema desde la
-[página de versiones](../../releases), descomprímala y ejecute `LogosIDE`. El
-diccionario completo viene incluido.
+Puede generar un ejecutable independiente con `pyinstaller logos.spec` (el
+diccionario completo queda incluido). Se irán adjuntando binarios precompilados
+a la [página de versiones](../../releases) a medida que estén disponibles.
 
 ### El paquete de datos completo
 
-La base de datos completa ocupa unos 300 MB, demasiado para el repositorio git.
-Descargue `logos_dict.db` desde la [página de versiones](../../releases) y
-colóquelo en su carpeta de datos de usuario:
+La base de datos completa ocupa unos 300 MB, demasiado para el repositorio git,
+por lo que se distribuye como recurso de la versión. Descargue
+**`logos_dict.db.zip`** desde la [página de versiones](../../releases),
+descomprímalo y coloque el archivo `logos_dict.db` resultante en su carpeta de
+datos de usuario:
 
 - **Windows:** `%LOCALAPPDATA%\LogosIDE\LogosIDE\logos_dict.db`
 

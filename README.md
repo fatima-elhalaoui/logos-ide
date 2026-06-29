@@ -69,7 +69,7 @@ See the **[User Guide](docs/USER_GUIDE.en.md)** for the complete keyboard refere
 Requires **Python 3.11+**.
 
 ```bash
-git clone https://github.com/<your-account>/logos-ide.git
+git clone https://github.com/fatima-elhalaoui/logos-ide.git
 cd logos-ide
 python -m venv venv
 venv\Scripts\activate            # Windows
@@ -83,15 +83,16 @@ below).
 
 ### Option B — packaged app (no Python needed)
 
-Download the latest release for your platform from the
-[Releases page](../../releases), unzip it and run `LogosIDE`. The full dictionary
-is bundled.
+A standalone build can be produced with `pyinstaller logos.spec` (the full
+dictionary is bundled into it). Prebuilt binaries will be attached to the
+[Releases page](../../releases) as they become available.
 
 ### The full dictionary data pack
 
-The complete dictionary database is ~300 MB — too large for the git repository.
-Download `logos_dict.db` from the [Releases page](../../releases) and place it in
-your user data folder:
+The complete dictionary database is ~300 MB — too large for the git repository,
+so it ships as a release asset. Download **`logos_dict.db.zip`** from the
+[Releases page](../../releases), unzip it, and place the resulting
+`logos_dict.db` in your user data folder:
 
 - **Windows:** `%LOCALAPPDATA%\LogosIDE\LogosIDE\logos_dict.db`
 

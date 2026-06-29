@@ -17,7 +17,7 @@ Accessibility problems are treated as high priority.
 ## Setting up a development environment
 
 ```bash
-git clone https://github.com/<your-account>/logos-ide.git
+git clone https://github.com/fatima-elhalaoui/logos-ide.git
 cd logos-ide
 python -m venv venv
 venv\Scripts\activate
