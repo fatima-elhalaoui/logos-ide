@@ -152,6 +152,9 @@ def main():
 
     conn = sqlite3.connect(args.db, timeout=60)
     conn.execute("PRAGMA busy_timeout=60000")  # wait, don't fail, on concurrent writes
+    # Temporary index so the WHERE definition = ? updates are fast; dropped at end
+    # so the shipped database is never bloated with it.
+    conn.execute("CREATE INDEX IF NOT EXISTS idx_def_tmp ON words(definition)")
     cache = load_cache()
     translate = get_translator(args.engine)
 
@@ -197,6 +200,11 @@ def main():
         save_cache(cache)
         if batch:
             apply_translations(conn, batch)
+        try:
+            conn.execute("DROP INDEX IF EXISTS idx_def_tmp")
+            conn.commit()
+        except Exception:
+            pass
         conn.close()
     print(f"Done. Translated {done} definitions this run.")
     return 0
